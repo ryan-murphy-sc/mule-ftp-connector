@@ -179,6 +179,7 @@ public class FtpConnectionProvider extends FileSystemProvider<FtpFileSystem> imp
     client.setControlEncoding(controlEncoding);
     if (getConnectionTimeout() != null && getConnectionTimeoutUnit() != null) {
       client.setConnectTimeout(new Long(getConnectionTimeoutUnit().toMillis(getConnectionTimeout())).intValue());
+      client.setDefaultTimeout(new Long(getConnectionTimeoutUnit().toMillis(getConnectionTimeout())).intValue());
     }
 
     if (LOGGER.isDebugEnabled()) {
